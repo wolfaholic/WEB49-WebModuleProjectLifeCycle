@@ -2,13 +2,15 @@ import React from 'react'
 
 class User extends React.Component {
     render() {
+        const { mainUser } = this.props;
+
         return(
             <div id="user">
-            <img src="https://avatars.githubusercontent.com/u/18158864?v=4" />
-            <a target="_blank" href="https://github.com/wolfaholic"><h3>Melissa Mackie</h3></a>
-            <p>(wolfaholic)</p>
-            <p>Total Repos: 50</p>
-            <p>Total Followers: 11</p>
+            <img src={mainUser.avatar_url} />
+            <a target="_blank" href={mainUser.html_url}><h3>Melissa Mackie</h3></a>
+            <p>(mainUser.login)</p>
+            <p>Total Repos: {mainUser.public_repos}</p>
+            <p>Total Followers: {mainUser.followers}</p>
             </div>
       );
     }
